@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info
+
+
+*.ipynb
+*.ckpt
+asd.log
+
+wandb/
+data/lsun/
+logs/
+outputs/
+fidelity_cache
+temp/
+
+samples
+src/
+SSD/
+# assets/
+
