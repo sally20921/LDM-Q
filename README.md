@@ -101,5 +101,20 @@ python sample.py \
 - The computed metrics are printed to the console. 
 
 ###  Image Generation and Manipulation
+The `./scripts/` directory contains several scripts that provide functionality for generating and manipulating images using pre-trained Stable Diffusion model. 
+These scripts support various sampling methods, such as DDIM, PLMS, and DPM solver, and allow for image-to-image translation, inpainting, and text-to-image generation. 
 
+```bash
+./scripts/sample_diffusion.py
+```
+- The `sample_diffusion.py` script generates samples using a pre-trained diffusion model, supporting both vanilla DDPM sampling and DDIM sampling.
+- The `sample_diffusion.py` script also provides utility functions for rescaling, converting, and saving generated samples. 
+
+```bash
+./scripts/txt2img.py
+```
+- The `txt2img.py` script generates images from text prompts using a pre-trained Stable Diffusion model.
+- `txt2img.py` supports various sampling methods, including DDIM, PLMS, and DPM Solver.
+- `txt2img.py` also supports functionality for checking the generated images for NSFW content and adding watermarks.
+- 
 
