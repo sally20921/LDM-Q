@@ -70,7 +70,9 @@ python sample.py \
 ./scripts/download_models.sh
 ```
 - `./scripts/download_first_stages.sh` script is responsible for downloading and extracting first-stage models used in Latent Diffusion project.
-  - It downloads a set of model files from the Ommer-Lab website and extracts them to the `./models/first_stage_models` directory.
+  - It downloads a set of model files from the `ommer-lab.com` website and extracts them to the `./models/first_stage_models` directory.
   - The models downloaded include different variations of KL-diffusion (`kl-f4`, `kl-f8`, `kl-f16`, `kl-f32`), and Vector Quantized (`vq-f4`, `vq-f4-noattn`, `vq-f8`, `vq-f8-n256`, `vq-f16`) models.
-
+- `download_models.sh` script is for downloading and extracting various pre-trained models used in the Latent Diffusion (LDM) framework.
+  - The models are downloaded from the `ommer-lab.com` website and saved in the `./models/ldm` directory.
+  - The script downloads models for different tasks, including CelebA-256, FFHQ-256, LSUN Churches-256, LSUN Bedrooms-256, Text-to-Image-256, CIN-256, Semantic Synthesis-512, Semantic Synthesis-256, Super-Resolution BSR, Layout-to-Image-OpenImages-256, and Inpainting-Big. 
 
