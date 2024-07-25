@@ -68,7 +68,7 @@ python sample.py \
 
 ### Model Download and Extraction
 
-```
+```bash
 ./scripts/download_first_stages.sh
 ./scripts/download_models.sh
 ```
@@ -80,12 +80,12 @@ python sample.py \
   - The script downloads models for different tasks, including CelebA-256, FFHQ-256, LSUN Churches-256, LSUN Bedrooms-256, Text-to-Image-256, CIN-256, Semantic Synthesis-512, Semantic Synthesis-256, Super-Resolution BSR, Layout-to-Image-OpenImages-256, and Inpainting-Big. 
 
 ### Evaluation 
-```
+```bash
 ./scripts/evaluate_fid.py
 ```
 - `./scripts/evaluate_fid.py` evaluates the FID metric between two datasets.
   - This script supports evaluating FID for the CIFAR-10 train and LSUN churches-256 train dataset.
-    ```
+    ```python
     def get_dataset(opt):
         if opt.dataset == 'cifar-10' or opt.dataset == 'CIFAR-10':
             return 'cifar10-train'
