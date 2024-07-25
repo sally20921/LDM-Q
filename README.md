@@ -69,6 +69,9 @@ python sample.py \
 ### Model Download and Extraction
 
 ```bash
+chmod +x scripts/download_first_stages.sh
+chmod +x scripts/download_models.sh
+
 ./scripts/download_first_stages.sh
 ./scripts/download_models.sh
 ```
@@ -116,5 +119,12 @@ These scripts support various sampling methods, such as DDIM, PLMS, and DPM solv
 - The `txt2img.py` script generates images from text prompts using a pre-trained Stable Diffusion model.
 - `txt2img.py` supports various sampling methods, including DDIM, PLMS, and DPM Solver.
 - `txt2img.py` also supports functionality for checking the generated images for NSFW content and adding watermarks.
-- 
+
+```bash
+./scripts/img2img.py
+```
+
+
+
+
 
