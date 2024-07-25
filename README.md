@@ -14,13 +14,47 @@ __Temporal Dynamic Quantization (TDQ)__ is a novel quantization method for diffu
 
 ## Getting Started
 
-## Installation
+### Setting Up the Environment
 ```
-git clone https://github.com/ECoLab-POSTECH/TDQ_NeurIPS2023
-cd TDQ_NeurIPS2023
+git clone https://github.com/sally20921/TDQ
+cd TDQ
 conda env create -f environment.yaml
 conda activate tdq
 ```
+
+### Downloading Pre-Trained Models
+```bash
+chmod +x scripts/download_first_stages.sh
+chmod +x scripts/download_models.sh
+
+./scripts/download_first_stages.sh
+./scripts/download_models.sh
+```
+
+### Generate Samples
+- Use the `scripts/sample_diffusion.py` script to generate samples.
+- This script uses the DDIM sampling method by default. 
+```bash
+python scripts/sample_diffusion.py --n_samples 10 --batch_size 2
+
+# parameters
+# --custom_steps : number of steps
+# --eta : DDIM sampling eta value
+
+
+```
+
+### Generate Sample Images from Text Prompts
+
+- Use the `scripts/txt2img.py` script to generate images from text prompts.
+- This script supports various sampling methods, including DDIM, PLMS, and DPM Solver.
+```bash
+python scripts/txt2img.py --prompt "leopard hunting impala" --outdir outputs/txt2img-samples --ddim_steps 50
+```
+
+
+
+
 
 ### Training TDQ
 FP checkpoint can be downloaded in [here](https://github.com/CompVis/latent-diffusion).
