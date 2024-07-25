@@ -76,3 +76,24 @@ python sample.py \
   - The models are downloaded from the `ommer-lab.com` website and saved in the `./models/ldm` directory.
   - The script downloads models for different tasks, including CelebA-256, FFHQ-256, LSUN Churches-256, LSUN Bedrooms-256, Text-to-Image-256, CIN-256, Semantic Synthesis-512, Semantic Synthesis-256, Super-Resolution BSR, Layout-to-Image-OpenImages-256, and Inpainting-Big. 
 
+## Evaluation 
+```
+./scripts/evaluate_fid.py
+```
+- `./scripts/evaluate_fid.py` evaluates the FID metric between two datasets.
+  - This script supports evaluating FID for the CIFAR-10 train and LSUN churches-256 train dataset.
+    ```
+    def get_dataset(opt):
+        if opt.dataset == 'cifar-10' or opt.dataset == 'CIFAR-10':
+            return 'cifar10-train'
+        elif opt.dataset == 'lsun_churches256' or opt.dataset == 'LSUN_churches256' or opt.dataset == 'lsun_churches' or opt.dataset == 'LSUN-churches':
+            opt.dataset = 'lsun_churches256'
+            config_path = "models/ldm/lsun_churches256/config.yaml"
+    ```
+  - `validate()` function as the main entry point for evaluating FID metric.
+    - creates an `EvalDataset` instance using the `opt.sample_path` argument
+    - calls the `torch_fidelity.calculate_metrics()` function to compute the FID, Inception Score (IS) and other metrics between the two datasets.
+  - **`torch_fidelity` library is used to provide a convenient interface for computing various image quality metrics.**
+    - `torch_fidelity.calculate_metrics()`: `torch_fidelity.calculate_metrics(input1, input2, batch_size=256, cache_root, cache=True, datasets_root, cuda=True, isc=True, fid=True, kid=False, samples_shuffle=False, verbose=True,)`
+- The computed metrics are printed to the console. 
+
