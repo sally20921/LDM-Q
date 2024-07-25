@@ -161,6 +161,35 @@ These scripts support various sampling methods, such as DDIM, PLMS, and DPM solv
 - `img2img.py` script uses the `DDIMSampler` class from the `ldm/models/diffusion/ddim.py` module to perform DDIM sampling supporting both GPU and CPU acceleration.
 - 
 
+## Directory Structure
 
-
-
+```
+TDQ/
+├── README.md
+├── environment.yaml
+├── main.py
+├── setup.py
+├── sample.py
+├── ldm/
+│   ├── data/
+│   │   ├── script1.py
+│   │   └── script2.py
+│   ├── data/
+│   │   ├── script1.py
+│   │   └── script2.py
+│   ├── data/
+│   │   ├── script1.py
+│   │   └── script2.py
+│   ├── lr_scheduler.py
+│   └── util.py
+├── scripts/
+│   ├── script1.py
+│   └── script2.py
+├── scripts/
+│   ├── script1.py
+│   └── script2.py
+└── models/
+    ├── test_main.py
+    ├── test_module1.py
+    └── test_module2.py
+```
