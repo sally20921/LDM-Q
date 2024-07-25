@@ -63,7 +63,10 @@ python sample.py \
 ## Acknowledgments 
 - Our codebase is based on [CompVis's Latent Diffusion codebase](https://github.com/CompVis/latent-diffusion).
 
-## Model Download and Extraction
+## How to Use the Scripts
+
+
+### Model Download and Extraction
 
 ```
 ./scripts/download_first_stages.sh
@@ -76,7 +79,7 @@ python sample.py \
   - The models are downloaded from the `ommer-lab.com` website and saved in the `./models/ldm` directory.
   - The script downloads models for different tasks, including CelebA-256, FFHQ-256, LSUN Churches-256, LSUN Bedrooms-256, Text-to-Image-256, CIN-256, Semantic Synthesis-512, Semantic Synthesis-256, Super-Resolution BSR, Layout-to-Image-OpenImages-256, and Inpainting-Big. 
 
-## Evaluation 
+### Evaluation 
 ```
 ./scripts/evaluate_fid.py
 ```
@@ -96,4 +99,7 @@ python sample.py \
   - **`torch_fidelity` library is used to provide a convenient interface for computing various image quality metrics.**
     - `torch_fidelity.calculate_metrics()`: `torch_fidelity.calculate_metrics(input1, input2, batch_size=256, cache_root, cache=True, datasets_root, cuda=True, isc=True, fid=True, kid=False, samples_shuffle=False, verbose=True,)`
 - The computed metrics are printed to the console. 
+
+###  Image Generation and Manipulation
+
 
