@@ -108,6 +108,12 @@ chmod +x scripts/download_models.sh
 
 ./scripts/download_first_stages.sh
 ./scripts/download_models.sh
+
+## `download_models.sh` stores checkpoint in:
+## `models/ldm/celeba256/celeba-256.zip`, 'models/ldm/ffhq256/ffhq-256.zip`, `models/ldm/lsun_churches256/lsun_churches-256.zip`.
+
+## `download_first_stages.sh` stores checkpoint in:
+## `models/first_stage_models/kl-f4/model.zip`, `models/first_stage_models/kl-f8/model.zip`, `models/first_stage_models/kl-f16/model.zip`
 ```
 - `./scripts/download_first_stages.sh` script is responsible for downloading and extracting first-stage models used in Latent Diffusion project.
   - It downloads a set of model files from the `ommer-lab.com` website and extracts them to the `./models/first_stage_models` directory.
@@ -142,7 +148,7 @@ The `./scripts/` directory contains several scripts that provide functionality f
 These scripts support various sampling methods, such as DDIM, PLMS, and DPM solver, and allow for image-to-image translation, inpainting, and text-to-image generation. 
 
 ```bash
-./scripts/sample_diffusion.py
+python scripts/sample_diffusion.py --resume /path/to/checkpoint
 ```
 - The `sample_diffusion.py` script generates samples using a pre-trained diffusion model, supporting both vanilla DDPM sampling and DDIM sampling.
 - The `sample_diffusion.py` script also provides utility functions for rescaling, converting, and saving generated samples. 
