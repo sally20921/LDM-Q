@@ -123,7 +123,9 @@ These scripts support various sampling methods, such as DDIM, PLMS, and DPM solv
 ```bash
 ./scripts/img2img.py
 ```
-
+- `img2img.py` script generates variations of an input image using a pre-trained Stable Diffusion model.
+- `img2img.py` script uses the `DDIMSampler` class from the `ldm/models/diffusion/ddim.py` module to perform DDIM sampling supporting both GPU and CPU acceleration.
+- 
 
 
 
