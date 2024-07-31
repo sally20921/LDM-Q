@@ -23,7 +23,13 @@ conda activate tdq
 ```
 
 ```
+python -m venv tdq
+source tdq/bin/activate
+# Activate on Linux/macOS
+# .\tdq\Scripts\activate
+# Activate on Windows
 pip install -r requirements.txt
+
 ```
 
 ### Downloading Pre-Trained Models
