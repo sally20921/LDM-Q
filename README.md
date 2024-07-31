@@ -158,7 +158,7 @@ The `./scripts/` directory contains several scripts that provide functionality f
 These scripts support various sampling methods, such as DDIM, PLMS, and DPM solver, and allow for image-to-image translation, inpainting, and text-to-image generation. 
 
 ```bash
-python scripts/sample_diffusion.py --resume /path/to/checkpoint
+python scripts/sample_diffusion.py --resume models/ldm/celeba256/model.ckpt --n_samples 50000 --eta 1.0 --vanilla_sample --logdir extra/logdir --custom_steps 50 --batch_size 10
 ```
 - The `sample_diffusion.py` script generates samples using a pre-trained diffusion model, supporting both vanilla DDPM sampling and DDIM sampling.
 - The `sample_diffusion.py` script also provides utility functions for rescaling, converting, and saving generated samples. 
