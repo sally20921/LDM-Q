@@ -22,6 +22,10 @@ conda env create -f environment.yaml
 conda activate tdq
 ```
 
+```
+pip install -r requirements.txt
+```
+
 ### Downloading Pre-Trained Models
 ```bash
 chmod +x scripts/download_first_stages.sh
