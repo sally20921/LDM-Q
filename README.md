@@ -80,6 +80,8 @@ python main.py \
     --use_dynamic
 
 ## starting main.py with `--scale_lr False` set to target_lr by base_learning_rate = 5.0e-5
+## in order for training to work, you need to change directory path in `configs/lsun_churches-ldm-kl-8.yaml`.
+
 ```
 
 The base configuration in `lsun_churches-ldm-kl-8.yaml` is set as follows:
