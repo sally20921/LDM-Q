@@ -239,3 +239,8 @@ TDQ/
     ├── test_module1.py
     └── test_module2.py
 ```
+
+## References
+- pdf reading: Coral AI
+- paper reading: typeset.io
+- doc wiki: https://wiki.mutable.ai/sally20921/TDQ
