@@ -101,6 +101,13 @@ The base configuration in `lsun_churches-ldm-kl-8.yaml` is set as follows:
   - target: `ldm.lr_scheduler.LambdaLinearScheduler`
 
 - U-Net configuration:
+  - `ldm.modules.diffusionmodules.openaimodel.UNetModel`
+  - image size: 32
+  - in channel: 4
+  - out channel: 4
+  - model channel: 192
+  - attention resolution: [1,2,4,8]
+  - number of ResNet block: 2
   - 
 
 ### Sampling from the model
