@@ -78,7 +78,30 @@ python main.py \
     --n_bit_a ${a_bit} \
     --name churches_W${w_bit}A${a_bit}_TDQ \
     --use_dynamic
+
+## starting main.py with `--scale_lr False` set to target_lr by base_learning_rate = 5.0e-5
 ```
+
+The base configuration in `lsun_churches-ldm-kl-8.yaml` is set as follows:
+
+- base learning rate: 5.0e-5
+- target: `ldm.models.diffusion.ddpm.LatentDiffusion`
+  
+- key parameter values:
+  - linear start: 0.0015
+  - linear end: 0.0155
+  - timestep: 1000
+  - loss_type: `l1`
+  - image size: 32
+  - channels: 4
+  - scale by std: `False`
+  - scale factor: 0.2458
+
+- scheduler configuration:
+  - target: `ldm.lr_scheduler.LambdaLinearScheduler`
+
+- U-Net configuration:
+  - 
 
 ### Sampling from the model
 ```
