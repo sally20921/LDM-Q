@@ -70,7 +70,31 @@ python scripts/txt2img.py --prompt "leopard hunting impala" --outdir outputs/txt
 
 #### Preparing Dataset 
 - LSUN Churches 256
-  
+```bash
+
+# install python and pip
+sudo apt update
+
+# install kaggle API
+pip install kaggle
+
+# set up Kaggle API Credentials
+# Go to your Kaggle account settings and download API Token `kaggle.json`
+# `kaggle.json` file must be in `~/.kaggle` folder
+mkdir -p ~/.kaggle
+chmod 600 ~/.kaggle/kaggle.json
+
+# download the dataset
+cd ~/lsun
+kaggle datasets download ajaykgp12/lsunchurch
+
+# unzip 
+unzip lsunchurch.zip -d /home/cma_root/lsun
+
+
+
+```
+
 
 FP checkpoint can be downloaded in [here](https://github.com/CompVis/latent-diffusion).
 ```
