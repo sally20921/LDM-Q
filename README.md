@@ -67,6 +67,11 @@ python scripts/txt2img.py --prompt "leopard hunting impala" --outdir outputs/txt
 
 
 ### Training TDQ
+
+#### Preparing Dataset 
+- LSUN Churches 256
+  
+
 FP checkpoint can be downloaded in [here](https://github.com/CompVis/latent-diffusion).
 ```
 python main.py \
