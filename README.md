@@ -247,7 +247,8 @@ TDQ/
     └── test_module2.py
 ```
 
-## References
+## Useful Resources
 - pdf reading: Coral AI
 - paper reading: typeset.io
 - doc wiki: https://wiki.mutable.ai/sally20921/TDQ
+- Stable Diffusion GUI txt2img 
