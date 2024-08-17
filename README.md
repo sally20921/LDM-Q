@@ -94,7 +94,7 @@ python main.py \
   pip install pytorch-lightning
   ```
 ```
-python main.py --base configs/lsun_churches-ldm-kl-8.yaml --ckpt models/ldm/lsun_churches256/model.ckpt --train True --scale_lr False --n_bit_w 8 --n_bit_a 4 --name churches_W8A4_TDQ --use_dynamic --gpus 8 --accelerator ddp
+python main.py --base configs/lsun_churches-ldm-kl-8.yaml --ckpt models/ldm/lsun_churches256/model.ckpt --train True --scale_lr False --n_bit_w 8 --n_bit_a 4 --name churches_W8A4_TDQ --use_dynamic --gpus 0,1,2,3,4,5,6,7 --accelerator ddp
 ```
 
 
