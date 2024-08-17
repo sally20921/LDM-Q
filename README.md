@@ -88,6 +88,15 @@ python main.py \
 ## in order for training to work, you need to change directory path in `configs/lsun_churches-ldm-kl-8.yaml`.
 
 ```
+#### Running in a Multi-GPU system
+- Use the `DDP` accelerator provided by PyTorch Lightning.
+  ```
+  pip install pytorch-lightning
+  ```
+```
+python 
+```
+
 
 The base configuration in `lsun_churches-ldm-kl-8.yaml` is set as follows:
 
