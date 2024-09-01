@@ -179,9 +179,27 @@ chmod +x scripts/download_models.sh
   - The script downloads models for different tasks, including CelebA-256, FFHQ-256, LSUN Churches-256, LSUN Bedrooms-256, Text-to-Image-256, CIN-256, Semantic Synthesis-512, Semantic Synthesis-256, Super-Resolution BSR, Layout-to-Image-OpenImages-256, and Inpainting-Big. 
 
 ### Evaluation 
+
 ```bash
 ./scripts/evaluate_fid.py
 ```
+Here's an example command to run the evaluation script:
+
+```bash
+python ./scripts/evaluate_fid.py \
+    --logdir /SSD/stable_diffusion/QAT/samples \
+    --dataset lsun_churches256 \
+    --gpu 0 \
+`   --name W4A8
+```
+- Ensure the model is quantized. Make sure you have a quantized model with W4A8 settings. This involves setting the number of bits for weights (`n_bit_w`) to `4` and activations (`n_bit_a`) to `8`.
+- Download the required models. Ensure that you have downloaded the necessary models using the `download_model.sh` and `download_first_stages.sh` scripts.
+- `--logdir`: directory where the samples are stored.
+- `--dataset`: the dataset to evaluate against, in this case, `lsun_churches256`.
+- `--gpu`: the gpu number to use.
+- `--name`: the name of the model. I used `W4A8` to indicate the quantization settings.
+- 
+
 - `./scripts/evaluate_fid.py` evaluates the FID metric between two datasets.
   - This script supports evaluating FID for the CIFAR-10 train and LSUN churches-256 train dataset.
     ```python
