@@ -69,6 +69,14 @@ python scripts/txt2img.py --prompt "leopard hunting impala" --outdir outputs/txt
 ### Training TDQ
 
 #### Preparing Dataset 
+
+The dataset preparation is pretty much prepared the same way as in Stable Diffusion [https://github.com/CompVis/latent-diffusion].
+
+
+
+- LSUN
+The LSUN datasets can be conveniently downloaded via the script available here. We performed a custom split into training and validation images, and provide the corresponding filenames at https://ommer-lab.com/files/lsun.zip. After downloading, extract them to ./data/lsun. The beds/cats/churches subsets should also be placed/symlinked at ./data/lsun/bedrooms/./data/lsun/cats/./data/lsun/churches, respectively.
+
 - LSUN Churches 256
 
 
