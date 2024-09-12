@@ -17,3 +17,23 @@ This creates a sample of size $384 \times 1024$. Note, however, that controllabi
 
 
 ## Train Your Own LDMs
+
+
+## Git Commit
+```bash
+git status
+git add .
+git commit -m "updating README.md"
+# list all the branches in your repository, the current branch is marked with asterisk
+git branch
+git branch --show-current
+
+
+# push your changes to GitHub
+git push origin main
+git push origin master
+```
+
+
+
+

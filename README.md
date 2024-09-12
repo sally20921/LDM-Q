@@ -38,6 +38,7 @@ pip install light-the-torch
 ltt install torch
 ```
 
+```
 git clone https://github.com/sally20921/TDQ
 cd TDQ
 conda env create -f environment.yaml
@@ -62,6 +63,12 @@ chmod +x scripts/download_models.sh
 ./scripts/download_first_stages.sh
 ./scripts/download_models.sh
 ```
+
+### Setting Directory Path
+
+- Change the `./configs` directory to appropriate value.
+
+
 
 ### Generate Samples
 - Use the `scripts/sample_diffusion.py` script to generate samples.
