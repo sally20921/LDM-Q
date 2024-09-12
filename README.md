@@ -15,7 +15,14 @@ __Temporal Dynamic Quantization (TDQ)__ is a novel quantization method for diffu
 ## Getting Started
 
 ### Setting Up the Environment
+
+#### Tip
+As always, when installing PyTorch, always do:
 ```
+pip install light-the-torch
+ltt install torch
+```
+
 git clone https://github.com/sally20921/TDQ
 cd TDQ
 conda env create -f environment.yaml
