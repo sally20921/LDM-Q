@@ -35,5 +35,53 @@ git push origin master
 ```
 
 
+## Model Training 
+
+Logs and checkpoints for trained models are saved to `logs/<START_DATE_AND_TIME>_<config_spec>`.
+
+
+### Training Autoencoder Models
+
+Configs for training KL-regularized autoencoder on ImageNet are provided at `configs/autoencoder`. Training can be started by running
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python main.py --base configs/autoencoder/autoencoder_kl_8x8x64.yaml -t --gpus 0,
+```
+
+- `autoencoder_kl_8x8x64.yaml` is config for $f=32, d=64$. 
+- `autoencoder_kl_16x16x16.yaml` is config for $f=16,d=16$.
+- `autoencoder_kl_32x32x4.yaml` is config for $f=8,d=4$.
+- `autoencoder_kl_64x64x3.yaml` is config for $f=4,d=3$.
+
+For VQ-regularized models, see the taming-transformers repository.
+
+### Training LDMs
+
+In `configs/latent-diffusion` we provide configs for training LDMs on the LSUN-churches, CelebA-HQ, FFHQ and ImageNet datasets. Training can be started by running
+
+```
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python main.py --base configs/latent-diffusion/lsun_bedrooms-ldm-vq-4.yaml -t --gpus 0,
+```
+
+- `celebahq-ldm-vq-4.yaml` is $f=4$, VQ-reg. autoencoder, spatial size $64 \times 64 \times 3$.
+- `ffhq-ldm-vq-4.yaml` is $f=4$, VQ-reg. autoencoder, spatial size $64 \times 64 \times 3$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
