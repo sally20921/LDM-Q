@@ -16,6 +16,21 @@ __Temporal Dynamic Quantization (TDQ)__ is a novel quantization method for diffu
 
 ### Setting Up the Environment
 
+#### Setting Up conda
+1. Install pre-requisites
+   ```bash
+   sudo apt update && sudo apt upgrade -y
+   sudo apt install -y curl wget bzip2 libssl-dev zlib1g-dev \
+    libreadline-dev libsqlite3-dev llvm libncursesw5-dev xz-utils tk-dev \
+    libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+   ```
+2. Download & Run miniconda installer
+   ```bash
+   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   bash Miniconda3-latest-Linux-x86_64.sh
+   source ~/.bashrc
+   ```
+
 #### Tip
 As always, when installing PyTorch, always do:
 ```
