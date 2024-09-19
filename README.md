@@ -134,6 +134,22 @@ python main.py \
 python main.py --base configs/lsun_churches-ldm-kl-8.yaml --ckpt models/ldm/lsun_churches256/model.ckpt --train True --scale_lr False --n_bit_w 8 --n_bit_a 4 --name churches_W8A4_TDQ --use_dynamic --gpus 0,1,2,3,4,5,6,7 --accelerator ddp
 ```
 
+#### Resuming Training from Checkpoint
+
+```
+python main.py --base configs/lsun_churches-ldm-kl-8.yaml --ckpt models/ldm/lsun_churches256/model.ckpt --train True --scale_lr False --n_bit_w 8 --n_bit_a 4 --gpu 0,1,2,3,4,5,6,7 --accelerator ddp --name churches_W8A4_TDQ --resume_from_checkpoint ./logs/2024-09-15T02-12-25_churches_W8A4_TDQ/checkpoints/last.ckpt
+```
+
+#### Saving Training and Error Message for Analysis
+
+```bash
+python main.py --base configs/lsun_churches-ldm-kl-8.yaml --ckpt models/ldm/lsun_churches256/model.ckpt --train True --scale_lr False --n_bit_w 4 --n_bit_a 8 --name churches_W4A8_TDQ --gpu 0,1,2,3,4,5,6,7 --accelerator ddp 2>&1 | tee error_logs/error_log_$(date +"%Y-%m-%d_%H-%M-%S").md
+```
+
+- `2>&1`: This redirects standard error (file descriptor 2) to standard output (file descriptor 1). This means that any error message will be sent to the same place as the regular output of your script.
+- `| tee error_logs/error_log_$(date +"%Y-%m-%d_%H-%M-%S").md`: This pipes the combined output (both standard output and the redirected standard error) to the `tee` command. `tee` will then both display this output on the console and write it to the specified log file. 
+- Make sure the `error_logs` directory exists. Otherwise, `tee` will fail to create the log file.
+
 
 The base configuration in `lsun_churches-ldm-kl-8.yaml` is set as follows:
 
@@ -315,4 +331,7 @@ TDQ/
 - pdf reading: Coral AI
 - paper reading: typeset.io
 - doc wiki: https://wiki.mutable.ai/sally20921/TDQ
-- Stable Diffusion GUI txt2img 
+- Stable Diffusion GUI txt2img
+
+- [Rethinking How to Train Diffusion Models](https://developer.nvidia.com/blog/rethinking-how-to-train-diffusion-models/#:~:text=Exponential%20moving%20averages&The%20idea%20is%20to%20keep,%E2%80%9Crecent%E2%80%9D%20weights%20during%20training)
+- [Training Models with Billions of Parameters](https://lightning.ai/docs/pytorch/stable/advanced/model_parallel/)
