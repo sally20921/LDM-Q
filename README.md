@@ -332,15 +332,14 @@ TDQ/
 │   ├── lr_scheduler.py
 │   └── util.py
 ├── scripts/
-│   ├── script1.py
-│   └── script2.py
+│   ├── evaluate_fid.py
+│   └── inpaint.py
 ├── configs/
-│   ├── script1.py
-│   └── script2.py
+│   ├── lsun_churches-ldm-kl-8.yaml
+│   └── cifar10-ddpm.yaml
 └── models/
-    ├── test_main.py
-    ├── test_module1.py
-    └── test_module2.py
+    ├── first_stage_models/
+    └── ldm/
 ```
 
 ## Useful Resources
