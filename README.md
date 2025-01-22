@@ -1,10 +1,8 @@
 
-# Temporal Dynamic Quantization for Diffusion Models <br> [[Paper]](https://openreview.net/pdf?id=D1sECc9fiG) [[Slides]](https://neurips.cc/media/neurips-2023/Slides/72396_MFC2QO6.pdf) [[Poster]](https://neurips.cc/media/PosterPDFs/NeurIPS%202023/72396.png?t=1701674987.6762419)
-#### [Junhyuk So*](https://github.com/junhyukso), [Jungwon Lee*](https://github.com/Jungwon-Lee), Daehyun Ahn, Hyungjun Kim and Eunhyeok Park
 
 <br>
 
-This is official PyTorch implementation of NeurIPS 2023 paper [Temporal Dynamic Quantization for Diffusion Models](https://openreview.net/pdf?id=D1sECc9fiG)
+
 
 ## Overview
 __Temporal Dynamic Quantization (TDQ)__ is a novel quantization method for diffusion model that dynamically predicts quantization interval using time information, without any overhead. Using static quantizers for diffusion model quantization suffers from poor performance due to time-varying activation. Our method overcomes this problem by dynamically predicting the quantization parameters using temporal information. Unlike the common dynamic quantization methods, our method has no overhead by utilizing only temporal information.
